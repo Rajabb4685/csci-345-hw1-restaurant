@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SwiperJS CSS + JS -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dave's Hot Chicken</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-5 bg-red-600 text-white">
+    <img src="assets/logo.png" alt="Logo" class="h-12">
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-yellow-300">Home</a>
+      <a href="menu.html" class="hover:text-yellow-300">Menu</a>
+      <a href="about.html" class="hover:text-yellow-300">About</a>
+      <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+    </nav>
+    <!-- Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-red-600 text-white flex flex-col items-center space-y-4 py-4 md:hidden">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <img src="assets/images/hero.jpg" alt="Restaurant" class="w-full h-[500px] object-cover">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-yellow-400">Dave's Hot Chicken</h1>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="p-10 text-center">
+    <h2 class="text-3xl font-bold mb-4">Welcome to Dave’s Hot Chicken</h2>
+    <p class="max-w-2xl mx-auto text-lg text-gray-600">
+      Experience the spiciest, juiciest chicken in town! Our Nashville-style
+      hot chicken is made fresh daily using a secret blend of spices and love.
+    </p>
+  </section>
+
+    <section class="p-10 bg-gray-50">
+  <h2 class="text-3xl font-bold text-center mb-6">Our Gallery</h2>
+
+  <!-- Swiper Container -->
+  <div class="swiper mySwiper w-full max-w-5xl mx-auto">
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="assets/images/food1.jpg" class="w-full h-80 object-cover rounded-lg" alt="Food 1">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/images/food2.jpg" class="w-full h-80 object-cover rounded-lg" alt="Food 2">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/images/food3.jpg" class="w-full h-80 object-cover rounded-lg" alt="Food 3">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/images/food4.jpg" class="w-full h-80 object-cover rounded-lg" alt="Food 4">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/images/food5.jpg" class="w-full h-80 object-cover rounded-lg" alt="Food 5">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/images/food6.jpg" class="w-full h-80 object-cover rounded-lg" alt="Food 6">
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next text-red-600"></div>
+    <div class="swiper-button-prev text-red-600"></div>
+
+    <!-- Pagination dots -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 1,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 text-center">
+    <p>Follow us:</p>
+    <div class="flex justify-center space-x-6 my-3">
+      <a href="#" class="hover:text-yellow-400">Facebook</a>
+      <a href="#" class="hover:text-yellow-400">Instagram</a>
+      <a href="#" class="hover:text-yellow-400">Twitter</a>
+    </div>
+    <p>Open Daily: 11am - 10pm</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+
+
+</body>
+</html>
