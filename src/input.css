@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+#cart {
+  border: 2px solid #444;
+  padding: 15px;
+  width: 300px;
+  background: #f8f8f8;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  border-radius: 8px;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.remove {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
